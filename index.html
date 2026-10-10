@@ -11,20 +11,22 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
 
   <style>
-    :root {
-      --white: #ffffff;
-      --paper: #fafafa;
-      --grey: #eeeeee;
-      --line: #dedede;
-      --ink: #242424;
-      --muted: #777777;
-      --red: #b52b32;
-      --shadow-light: #ffffff;
-      --shadow-dark: #dedede;
-    }
+    
+:root {
+  --white: #ffffff;
+  --paper: #f8f6f1;
+  --grey: #eae6df;
+  --line: #ded9d0;
+  --ink: #242424;
+  --muted: #77736d;
+  --red: #ad3028;
+  --shadow-light: #ffffff;
+  --shadow-dark: #e4dfd6;
+}
 
     * {
       box-sizing: border-box;
@@ -113,34 +115,35 @@
         -2px -2px 4px #ffffff;
     }
 
-   .hero {
+  .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(200px, 0.75fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   align-items: center;
-  gap: 12px;
-  padding-top: 55px;
-  padding-bottom: 45px;
+  gap: 36px;
+  padding-top: 70px;
+  padding-bottom: 65px;
+  min-height: 590px;
 }
 
-    .eyebrow {
-      color: var(--red);
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
+   .eyebrow {
+  color: var(--red);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
 
     h1, h2, h3, p {
       margin-top: 0;
     }
 
-    h1 {
-  margin-bottom: 12px;
-  font-size: clamp(2rem, 4vw, 3.4rem);
-  font-weight: 300;
+   h1 {
+  margin-bottom: 14px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 5.2vw, 5.4rem);
+  font-weight: 400;
   letter-spacing: -0.055em;
-  line-height: 1.15;
-  white-space: nowrap;
+  line-height: 1.08;
 }
 
     h2 {
@@ -156,25 +159,26 @@
     }
 
     .handwritten {
-      margin-bottom: 18px;
-      color: var(--red);
-      font-family: "Caveat", cursive;
-      font-size: 2.1rem;
-      line-height: 1.3;
-    }
+  margin-bottom: 22px;
+  color: var(--red);
+  font-family: "Caveat", cursive;
+  font-size: clamp(2rem, 3.1vw, 3.1rem);
+  line-height: 1.2;
+}
+  .intro {
+  max-width: 620px;
+  color: #55534f;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.04rem;
+  line-height: 1.85;
+}
 
-   .intro {
-  max-width: 650px;
-  color: #626262;
-  font-size: 1rem;
-  line-height: 1.8;
-    }
-
-   .drawing {
+ .drawing {
+  display: block;
   width: 100%;
-  max-width: 300px;
-  justify-self: start;
-  color: #333333;
+  max-width: 550px;
+  justify-self: center;
+  color: var(--ink);
 }
 
     .section {
@@ -282,16 +286,19 @@
         justify-content: flex-start;
       }
 
-      .hero {
+     .hero {
   grid-template-columns: 1fr;
-  gap: 20px;
-  padding-top: 40px;
-  padding-bottom: 35px;
+  gap: 28px;
+  min-height: auto;
+  padding-top: 45px;
+  padding-bottom: 40px;
 }
 
-      .drawing {
-        max-width: 270px;
-      }
+    .drawing {
+  max-width: 400px;
+  justify-self: center;
+}
+
 
       .cards {
         grid-template-columns: 1fr;
@@ -335,40 +342,86 @@ This is where I collect my academic work, workshops, teaching resources and asso
         <a class="tab" href="#about">A little about me ↗</a>
       </div>
 
-      <svg class="drawing"
-           viewBox="0 0 360 330"
-           fill="none"
-           stroke="currentColor"
-           stroke-width="1.4"
-           stroke-linecap="round"
-           stroke-linejoin="round"
-           role="img"
-           aria-label="Line drawing of an open book with a growing branch">
+      
+<svg class="drawing"
+     viewBox="0 0 520 480"
+     fill="none"
+     xmlns="http://www.w3.org/2000/svg"
+     role="img"
+     aria-label="Abstract ink lines and paper fragments suggesting ideas in motion">
 
-        <path d="M40 236 Q104 209 177 241 Q245 207 320 235"/>
-        <path d="M40 236 L43 255 Q109 232 177 261 Q245 231 318 254 L320 235"/>
-        <path d="M177 241 L177 261"/>
+  <defs>
+    <pattern id="paperTexture" width="9" height="9"
+             patternUnits="userSpaceOnUse">
+      <path d="M0 8L8 0" stroke="#cfc8bc"
+            stroke-width="0.5" opacity="0.45"/>
+    </pattern>
+  </defs>
 
-        <path d="M54 244 Q110 225 164 251"/>
-        <path d="M192 251 Q251 224 305 243"/>
+  <!-- Quiet, overlapping paper fragments -->
+  <path d="M215 54 L347 43 L364 182
+           L233 194 L205 127 Z"
+        fill="#e9e3d8" opacity="0.62"/>
 
-        <path d="M179 238 C176 188 187 144 205 105"/>
-        <path d="M192 166 C157 157 143 135 145 111 C171 119 188 138 192 166"/>
-        <path d="M197 140 C223 125 233 104 228 82 C207 94 197 113 197 140"/>
-        <path d="M184 196 C153 191 132 171 129 150 C158 158 177 175 184 196"/>
-        <path d="M204 111 C226 110 247 95 254 76 C231 78 213 91 204 111"/>
+  <path d="M215 54 L347 43 L364 182
+           L233 194 L205 127 Z"
+        fill="url(#paperTexture)" opacity="0.7"/>
 
-        <path d="M145 111 Q151 135 192 166"/>
-        <path d="M228 82 Q221 109 197 140"/>
-        <path d="M129 150 Q149 179 184 196"/>
-        <path d="M254 76 Q235 101 204 111"/>
+  <path d="M265 221 L422 205 L443 354
+           L292 370 L271 306 Z"
+        fill="#eee8dd" opacity="0.7"/>
 
-        <path d="M72 211 Q103 202 133 210"/>
-        <path d="M217 210 Q248 200 281 210"/>
+  <path d="M265 221 L422 205 L443 354
+           L292 370 L271 306 Z"
+        fill="url(#paperTexture)" opacity="0.55"/>
 
-        <path d="M100 276 Q180 290 259 276"/>
-        <path d="M125 290 Q180 300 235 290"/>
-      </svg>
+  <!-- One red mark -->
+  <circle cx="358" cy="151" r="34"
+          fill="#ad3028" opacity="0.88"/>
+
+  <!-- A line that wanders, without enclosing the composition -->
+  <path d="M55 344
+           C108 274 156 315 205 269
+           S278 186 321 211
+           C356 231 371 273 409 283"
+        stroke="#292825"
+        stroke-width="1.7"
+        stroke-linecap="round"/>
+
+  <path d="M321 211
+           C342 178 327 123 373 88"
+        stroke="#292825"
+        stroke-width="1.3"
+        stroke-linecap="round"/>
+
+  <path d="M327 213
+           C357 232 374 247 391 270"
+        stroke="#ad3028"
+        stroke-width="1.8"
+        stroke-linecap="round"/>
+
+  <!-- Small, deliberate marks -->
+  <circle cx="204" cy="269" r="3" fill="#292825"/>
+  <circle cx="409" cy="283" r="2.5" fill="#292825"/>
+  <circle cx="373" cy="88" r="2" fill="#ad3028"/>
+
+  <path d="M91 395 L160 381"
+        stroke="#b7afa2" stroke-width="1"/>
+  <path d="M389 390 L444 390"
+        stroke="#ad3028" stroke-width="2"
+        stroke-linecap="round"/>
+
+  <!-- A tiny handwritten fragment -->
+  <path d="M285 291 Q301 285 317 291
+           M287 300 Q302 294 322 300
+           M289 309 Q304 303 315 309"
+        stroke="#77736d"
+        stroke-width="0.8"
+        stroke-linecap="round"
+        opacity="0.7"/>
+
+</svg>
+
     </section>
 
     <section id="about" class="section">
