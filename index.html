@@ -93,7 +93,7 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr);
+      grid-template-columns: minmax(0, 1fr);
       align-items: center;
       gap: clamp(28px, 5vw, 68px);
       padding-top: clamp(54px, 8vw, 100px);
@@ -217,6 +217,9 @@
       display: block;
     }
 
+
+    /* A typographic feature gives the right column a reason to exist. */
+
     .section {
       padding: clamp(42px, 6vw, 72px) 0;
       border-top: 1px solid var(--line);
@@ -249,7 +252,7 @@
 
     .section-content {
       margin-left: 66px;
-      max-width: 1040px;
+      max-width: none;
     }
 
     .about-story { max-width: 760px; }
@@ -488,6 +491,185 @@
       .about-story p { font-size: .94rem; }
       .hero-copy { font-size: .96rem; }
     }
+  
+    .cuneiform-rule {
+      width: 100%;
+      margin: clamp(26px, 4vw, 48px) 0 0;
+      color: #5b5147;
+      opacity: .94;
+      grid-column: 1 / -1;
+    }
+    .cuneiform-rule svg {\n      vertical-align: top;
+      display: block;
+      width: 100%;
+      height: clamp(54px, 7vw, 92px);
+      overflow: visible;
+    }
+    .cuneiform-rule path {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.35;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      vector-effect: non-scaling-stroke;
+    }
+    .cuneiform-rule .cuneiform-sign path {
+      stroke-width: 1.55;
+    }
+    .cuneiform-rule .cuneiform-accent path {
+      stroke: #ad3328;
+      stroke-width: 1.65;
+    }
+    .cuneiform-rule .cuneiform-accent path:nth-child(n+5) {
+      fill: #ad3328;
+      stroke: #ad3328;
+    }
+
+  
+    /* Final spacing and alignment refinements */
+    #about h2, #about .section-title, #about .section-heading {
+      margin-bottom: 12px !important;
+    }
+    #about img, #about figure, #about .about-image, #about .about-photo {
+      margin-top: 8px !important;
+    }
+    .cuneiform-rule {
+      margin-top: 22px;
+    }
+    .cuneiform-rule svg {\n      vertical-align: top;
+      height: 68px;
+    }
+    .cuneiform-rule .tablet-thread {
+      stroke-width: 1.25;
+    }
+
+  
+    /* Writing cards: align the expandable rows across each two-column row. */
+    #writing .cards:not(.workshop-cards) .card {
+      display: flex;
+      flex-direction: column;
+      align-self: stretch;
+      min-height: 236px;
+    }
+    #writing .cards:not(.workshop-cards) .card > details {
+      margin-top: auto;
+    }
+    #writing .cards:not(.workshop-cards) .card > details > summary {
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+    }
+    #writing .cards:not(.workshop-cards) .card > details > summary::marker {
+      content: "";
+    }
+
+  
+    /* Workshop cards: keep the two top cards and their expandable rows aligned. */
+    .workshop-cards {
+      align-items: stretch;
+      row-gap: 0;
+    }
+    .workshop-cards .workshop-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .workshop-cards .workshop-card > .workshop-toggle {
+      margin-top: auto;
+    }
+    .workshop-cards .workshop-card > .workshop-toggle > summary {
+      min-height: 42px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+    }
+    @media (min-width: 700px) {
+      .workshop-cards .workshop-card:nth-child(1),
+      .workshop-cards .workshop-card:nth-child(2) {
+        min-height: 240px;
+      }
+    }
+
+  
+    /* Compact hero-to-About transition: keep the motif close to the intro. */
+    .hero {
+      padding-top: clamp(32px, 4vw, 52px) !important;
+      padding-bottom: 22px !important;
+      gap: 20px !important;
+      align-content: start;
+    }
+    .cuneiform-rule {
+      margin-top: 4px !important;
+      margin-bottom: 0 !important;
+    }
+    .cuneiform-rule svg {
+      height: 48px !important;
+    }
+    .section {
+      padding-top: 28px !important;
+    }
+    .section-heading {
+      margin-bottom: 20px !important;
+    }
+    @media (max-width: 700px) {
+      .hero {
+        padding-top: 28px !important;
+        padding-bottom: 18px !important;
+      }
+      .cuneiform-rule svg {
+        height: 38px !important;
+      }
+      .section {
+        padding-top: 22px !important;
+      }
+    }
+
+  
+    /* Workshop row: force equal card heights and pin both disclosure rules to the same baseline. */
+    @media (min-width: 700px) {
+      .workshop-cards {
+        grid-auto-rows: 230px;
+        align-items: stretch;
+      }
+      .workshop-cards > .workshop-card:nth-child(1),
+      .workshop-cards > .workshop-card:nth-child(2) {
+        height: 230px;
+        min-height: 0 !important;
+        box-sizing: border-box;
+      }
+      .workshop-cards > .workshop-card:nth-child(1) > .workshop-toggle,
+      .workshop-cards > .workshop-card:nth-child(2) > .workshop-toggle {
+        margin-top: auto !important;
+        flex-shrink: 0;
+      }
+      .workshop-cards > .workshop-card:nth-child(1) > .workshop-toggle > summary,
+      .workshop-cards > .workshop-card:nth-child(2) > .workshop-toggle > summary {
+        min-height: 42px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+      }
+    }
+
+  
+    /* Keep the hero title on one line on wider screens. */
+    @media (min-width: 760px) {
+      .hero h1,
+      .hero-title,
+      h1.hero-title {
+        white-space: nowrap;
+        font-size: clamp(3.3rem, 5.2vw, 5.8rem);
+        letter-spacing: -.045em;
+      }
+    }
+    @media (max-width: 759px) {
+      .hero h1,
+      .hero-title,
+      h1.hero-title {
+        white-space: normal;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -516,60 +698,37 @@
         <a class="text-link" href="#about">A little about me <span aria-hidden="true">↘</span></a>
       </div>
 
-      <svg class="collage" viewBox="0 0 480 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A collage of newspaper clippings, print columns and a muted red circle">
-        <defs>
-          <pattern id="grain" width="11" height="11" patternUnits="userSpaceOnUse">
-            <path d="M1 3l3 -1 M7 9l2 -2" stroke="#c9c0b2" stroke-width=".6" opacity=".45"/>
-          </pattern>
-        </defs>
-        <g transform="rotate(-5 245 120)">
-          <path d="M190 30 L325 26 L339 170 L318 174 L304 169 L190 177 L184 139 L188 92 Z" fill="#eee8dc"/>
-          <path d="M190 30 L325 26 L339 170 L318 174 L304 169 L190 177 L184 139 L188 92 Z" fill="url(#grain)"/>
-          <text x="204" y="49" font-family="Georgia,serif" font-size="8" letter-spacing="1" fill="#292825">THE DAILY WORD</text>
-          <path d="M203 56H321" stroke="#292825" stroke-width="1"/>
-          <text x="203" y="72" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#292825">On language</text>
-          <g stroke="#777168" stroke-width=".8" opacity=".75">
-            <path d="M203 82h35 M203 87h38 M203 92h32 M203 97h37 M203 102h28 M203 107h38 M203 112h33 M203 117h37 M203 122h30 M203 127h36 M203 132h33 M203 137h38 M203 142h28 M203 147h38 M203 152h33 M203 157h36"/>
-            <path d="M246 82h36 M246 87h37 M246 92h33 M246 97h36 M246 102h29 M246 107h37 M246 112h32 M246 117h37 M246 122h31 M246 127h36 M246 132h33 M246 137h37 M246 142h29 M246 147h37 M246 152h32 M246 157h36"/>
+      
+    
+      <div class="cuneiform-rule" aria-hidden="true">
+        <svg viewBox="0 0 1000 100" preserveAspectRatio="none" role="presentation" focusable="false">
+          <path class="tablet-thread" d="M14 51 C90 47 120 56 192 51 S305 48 374 52 S500 55 570 51 S700 48 770 52 S900 50 986 51"/>
+          <g class="cuneiform-sign" transform="translate(35 0)">
+            <path d="M0 22 L-3 77 M12 20 L9 77 M24 25 L21 77"/>
           </g>
-        </g>
-        <g transform="rotate(4 340 260)">
-          <path d="M270 190 L424 196 L421 324 L393 322 L378 328 L271 320 Z" fill="#f1ece2"/>
-          <path d="M270 190 L424 196 L421 324 L393 322 L378 328 L271 320 Z" fill="url(#grain)"/>
-          <text x="283" y="213" font-family="Georgia,serif" font-size="8" letter-spacing=".7" fill="#292825">IDEAS &amp; CULTURE</text>
-          <path d="M282 220H410" stroke="#292825" stroke-width="1"/>
-          <text x="282" y="237" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#292825">The art of</text>
-          <text x="282" y="250" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#292825">asking why</text>
-          <g stroke="#777168" stroke-width=".8" opacity=".75">
-            <path d="M283 262h37 M283 267h36 M283 272h33 M283 277h37 M283 282h29 M283 287h36 M283 292h34 M283 297h37 M283 302h30 M283 307h36 M283 312h33"/>
-            <path d="M326 262h37 M326 267h34 M326 272h36 M326 277h30 M326 282h37 M326 287h33 M326 292h36 M326 297h31 M326 302h37 M326 307h32 M326 312h36"/>
+          <g class="cuneiform-sign" transform="translate(160 0)">
+            <path d="M-20 31 L13 27 L-2 43 L-20 31 Z M-20 69 L13 73 L-2 57 L-20 69 Z"/>
           </g>
-        </g>
-        <g transform="rotate(-3 150 320)">
-          <path d="M55 235 L211 241 L207 365 L181 362 L165 368 L52 359 Z" fill="#e8e1d5"/>
-          <path d="M55 235 L211 241 L207 365 L181 362 L165 368 L52 359 Z" fill="url(#grain)"/>
-          <text x="68" y="257" font-family="Georgia,serif" font-size="8.5" font-weight="bold" fill="#292825">THE WEEKLY REVIEW</text>
-          <path d="M68 264H195" stroke="#292825" stroke-width="1"/>
-          <g stroke="#777168" stroke-width=".8" opacity=".8">
-            <path d="M68 276h37 M68 281h38 M68 286h32 M68 291h37 M68 296h28 M68 301h37 M68 306h33 M68 311h38 M68 316h29 M68 321h37 M68 326h33 M68 331h37 M68 336h30 M68 341h37"/>
-            <path d="M111 276h37 M111 281h33 M111 286h37 M111 291h30 M111 296h37 M111 301h33 M111 306h37 M111 311h29 M111 316h37 M111 321h33 M111 326h37 M111 331h30 M111 336h37 M111 341h33"/>
+          <g class="cuneiform-sign" transform="translate(330 0)">
+            <path d="M-10 25 L-13 76 M2 23 L-1 77 M14 28 L11 74"/>
+            <path d="M21 29 L41 33 L30 45 Z M21 70 L41 66 L30 54 Z"/>
           </g>
-        </g>
-        <circle cx="340" cy="155" r="42" fill="#a83229" opacity=".92"/>
-        <path d="M313 123 C333 109 366 123 379 146 C392 172 371 194 344 197" stroke="#d7a49a" stroke-width="1" opacity=".7" fill="none"/>
-        <path d="M22 302L454 205" stroke="#292825" stroke-width="1.2" stroke-linecap="round"/>
-        <path d="M239 185L258 402" stroke="#a83229" stroke-width="1.3" stroke-linecap="round"/>
-        <path d="M300 365L432 370" stroke="#292825" stroke-width="1.1" stroke-linecap="round"/>
-        <path d="M70 380Q111 375 153 382" stroke="#a83229" stroke-width="4" stroke-linecap="round" fill="none"/>
-        <path d="M75 388Q111 385 145 388" stroke="#c56d60" stroke-width="1" stroke-linecap="round" fill="none"/>
-        <g fill="#292825">
-          <circle cx="120" cy="70" r="2.2"/><circle cx="140" cy="58" r="1.8"/><circle cx="153" cy="88" r="2.2"/>
-          <circle cx="132" cy="106" r="1.8"/><circle cx="166" cy="124" r="2.2"/><circle cx="112" cy="140" r="1.8"/>
-        </g>
-      </svg>
-    </section>
+          <g class="cuneiform-sign" transform="translate(495 0)">
+            <path d="M-20 34 L16 29 L0 43 L-20 34 Z M-20 50 L16 50 L0 61 L-20 50 Z M-20 68 L16 73 L0 60 L-20 68 Z"/>
+            <path d="M29 25 L26 76 M41 22 L38 77"/>
+          </g>
+          <g class="cuneiform-sign" transform="translate(680 0)">
+            <path d="M-18 30 L17 25 L2 41 L-18 30 Z M-18 50 L17 50 L2 61 L-18 50 Z M-18 70 L17 75 L2 60 L-18 70 Z"/>
+          </g>
+          <g class="cuneiform-sign cuneiform-accent" transform="translate(900 0)">
+            <path d="M0 23 L0 77 M-27 50 L27 50 M-20 30 L20 70 M-20 70 L20 30"/>
+            <path d="M0 23 L-5 34 L5 34 Z M27 50 L16 45 L16 55 Z M0 77 L-5 66 L5 66 Z M-27 50 L-16 45 L-16 55 Z"/>
+          </g>
+        </svg>
+      </div>
 
-    <section id="about" class="section">
+    </section>
+<section id="about" class="section">
       <div class="section-heading">
         <span class="section-number">01 /</span>
         <h2>About</h2>
@@ -589,8 +748,7 @@
         </p>
       </div>
     </section>
-
-    <section id="writing" class="section">
+<section id="writing" class="section">
       <div class="section-heading">
         <span class="section-number">02 /</span>
         <h2>Writing</h2>
@@ -687,8 +845,7 @@
         <p class="section-intro">More work will be added here over time, with publication details and links to read each piece.</p>
       </div>
     </section>
-
-    <section id="workshops" class="section">
+<section id="workshops" class="section">
       <div class="section-heading">
         <span class="section-number">03 /</span>
         <h2>Workshops</h2>
