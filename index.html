@@ -774,7 +774,182 @@
       }
     }
 
-  </style>
+  
+    #videos .video-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+    #videos .video-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px 38px;
+      margin-top: 22px;
+    }
+    #videos .video-item {
+      min-width: 0;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+    #videos .video-item a {
+      color: var(--red);
+      text-decoration: none;
+    }
+    #videos .video-item p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+    @media (max-width: 700px) {
+      #videos .video-links { grid-template-columns: 1fr; }
+    }
+
+  
+/* Align workshop cards: descriptions and expand links sit on a shared baseline. */
+@media (min-width: 700px) {
+  .workshop-cards {
+    align-items: stretch !important;
+  }
+  .workshop-cards > .workshop-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    align-self: stretch !important;
+  }
+  .workshop-cards > .workshop-card .workshop-toggle {
+    margin-top: auto !important;
+  }
+  .workshop-cards > .workshop-card .workshop-toggle > summary {
+    margin-top: 16px !important;
+  }
+}
+
+
+    /* Videos section: restrained typography and an expandable episode list. */
+    #videos .video-intro { max-width: 760px; }
+    #videos .video-series-title {
+      margin: 0 0 10px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+    #videos .video-dropdown {
+      margin-top: 20px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    #videos .video-dropdown > summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 14px 0;
+      color: var(--red);
+      cursor: pointer;
+      list-style: none;
+      font-size: .9rem;
+    }
+    #videos .video-dropdown > summary::-webkit-details-marker { display: none; }
+    #videos .video-dropdown > summary span { font-size: 1.15rem; }
+    #videos .video-dropdown[open] > summary span { transform: rotate(45deg); }
+    #videos .video-episode-list {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 8px;
+    }
+    #videos .video-episode-list li {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+    }
+    #videos .video-episode-list a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+    #videos .video-episode-list a:hover { color: var(--red); }
+    #videos .video-episode-list span {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+
+/* Give the prose a little more room across the page without changing the overall layout. */
+@media (min-width: 900px) {
+  .about-story,
+  .editorial-note,
+  #videos .video-intro,
+  .section-content > p,
+  .section-content > .prose {
+    max-width: 980px !important;
+  }
+  .about-story p {
+    max-width: 980px;
+  }
+}
+
+
+/* Tighten the Videos heading and align its content with the heading text. */
+#videos .section-heading {
+  grid-template-columns: 30px minmax(0, 1fr) !important;
+  column-gap: 8px !important;
+}
+#videos .section-content {
+  margin-left: 38px !important;
+}
+@media (max-width: 700px) {
+  #videos .section-heading {
+    grid-template-columns: 30px minmax(0, 1fr) !important;
+    column-gap: 8px !important;
+  }
+  #videos .section-content {
+    margin-left: 0 !important;
+  }
+}
+
+
+/* Final explicit alignment for Videos: compact number/title spacing. */
+#videos > .section-heading {
+  display: grid !important;
+  grid-template-columns: 24px minmax(0, 1fr) !important;
+  column-gap: 5px !important;
+  align-items: baseline !important;
+}
+#videos > .section-heading > .section-number {
+  grid-column: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#videos > .section-heading > h2 {
+  grid-column: 2 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#videos > .section-content {
+  margin-left: 29px !important;
+  padding-left: 0 !important;
+}
+#videos .video-intro {
+  margin-left: 0 !important;
+  max-width: 980px !important;
+}
+@media (max-width: 700px) {
+  #videos > .section-heading {
+    grid-template-columns: 24px minmax(0, 1fr) !important;
+    column-gap: 5px !important;
+  }
+  #videos > .section-content {
+    margin-left: 0 !important;
+  }
+}
+
+</style>
 </head>
 <body>
   <header class="site-header">
@@ -784,6 +959,7 @@
         <a href="#about">About</a>
         <a href="#writing">Writing</a>
         <a href="#workshops">Workshops</a>
+        <a href="#videos">Videos</a>
       </div>
     </nav>
   </header>
@@ -945,7 +1121,9 @@
               </ul>
             </details>
           </article>
-        
+        </div>
+        <p class="section-intro">More work will be added here over time, with publication details and links to read each piece.</p>
+      </div>
     </section>
 <section id="workshops" class="section">
       <div class="section-heading">
@@ -985,7 +1163,7 @@
             <details class="work-toggle workshop-toggle">
               <summary>View teacher workshops</summary>
               <ul class="press-list workshop-list">
-                <li><span class="work-title">English Language Teacher Training</span><span>Karnataka Public Government SchoolS Teachers · 2023, 2024</span></li>
+                <li><span class="work-title">English Language Teacher Training</span><span>Government high school teachers · 2022, 2024</span></li>
                 <li><span class="work-title">The Power of Reading</span><span>Directorate of Minorities Dr APJ Kalam Schools, Shikshalokam · 2023</span></li>
                 <li><span class="work-title">Training Teachers to Teach Grammar to Second Language Learners</span><span>ACTS Academy Teachers, Bengaluru · 2023</span></li>
                 <li><span class="work-title">Teaching for Creativity</span><span>Bethany High School, Bengaluru · 2018</span></li>
@@ -1000,9 +1178,9 @@
             <details class="work-toggle workshop-toggle">
               <summary>View research workshops</summary>
               <ul class="press-list workshop-list">
-                <li><span class="work-title">Faculty Development Programme</span><span>Karnataka Government First Grade Degree College Faculty · 2026</span></li>
+                <li><span class="work-title">Faculty Development Programme</span><span>30 government degree college faculty · 2026</span></li>
                 <li><span class="work-title">Quality Assessment</span><span>Department of Literature and Cultural Studies, Christ University · 2026</span></li>
-                <li><span class="work-title">Critical Reading and Writing</span><span>Karnataka Government First Grade Degree College Faculty · 2025</span></li>
+                <li><span class="work-title">Critical Reading and Writing</span><span>Faculty from government degree colleges · 2025</span></li>
                 <li><span class="work-title">Research Writing Workshop</span><span>DAKSH Foundation, Bengaluru · 2025</span></li>
                 <li><span class="work-title">Research Methodology Workshop for Teacher Educators</span><span>Azim Premji University · co-facilitated · 2023</span></li>
               </ul>
@@ -1011,6 +1189,33 @@
         </div>
       </div>
     </section>
+
+    <section id="videos" class="section">
+      <div class="section-heading">
+        <span class="section-number">04 /</span>
+        <h2>Videos</h2>
+      </div>
+      <div class="section-content">
+        <div class="editorial-note video-intro">
+          <h3 class="video-series-title">Story of Words</h3>
+          <p>Conversations about words, language and the stories they carry, with Upendran Subramanian and others.</p>
+          <details class="video-dropdown">
+            <summary>View episodes <span aria-hidden="true">+</span></summary>
+            <ul class="video-episode-list">
+              <li>
+                <a href="https://www.youtube.com/watch?v=Co2prL_gBxU" target="_blank" rel="noopener noreferrer">Rhyme and No Reason: Learning English Through Rhymes</a>
+                <span>With Upendran Subramanian</span>
+              </li>
+              <li>
+                <a href="https://youtu.be/6c8lpgrKECU?si=AI2jp7mApN2zlIwu" target="_blank" rel="noopener noreferrer">Story of Words: Word Origins, English and Pronunciation</a>
+                <span>With Upendran Subramanian</span>
+              </li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
