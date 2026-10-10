@@ -895,57 +895,22 @@
 }
 
 
-/* Tighten the Videos heading and align its content with the heading text. */
-#videos .section-heading {
-  grid-template-columns: 30px minmax(0, 1fr) !important;
-  column-gap: 8px !important;
-}
-#videos .section-content {
-  margin-left: 38px !important;
-}
-@media (max-width: 700px) {
-  #videos .section-heading {
-    grid-template-columns: 30px minmax(0, 1fr) !important;
-    column-gap: 8px !important;
-  }
-  #videos .section-content {
-    margin-left: 0 !important;
-  }
-}
 
-
-/* Final explicit alignment for Videos: compact number/title spacing. */
+/* Videos: keep the section number close to the title and align content beneath it. */
 #videos > .section-heading {
-  display: grid !important;
-  grid-template-columns: 24px minmax(0, 1fr) !important;
-  column-gap: 5px !important;
-  align-items: baseline !important;
-}
-#videos > .section-heading > .section-number {
-  grid-column: 1 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-#videos > .section-heading > h2 {
-  grid-column: 2 !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  grid-template-columns: 24px minmax(0, 1fr);
+  column-gap: 5px;
 }
 #videos > .section-content {
-  margin-left: 29px !important;
-  padding-left: 0 !important;
+  margin-left: 29px;
 }
-#videos .video-intro {
-  margin-left: 0 !important;
-  max-width: 980px !important;
-}
-@media (max-width: 700px) {
+@media (max-width: 480px) {
   #videos > .section-heading {
-    grid-template-columns: 24px minmax(0, 1fr) !important;
-    column-gap: 5px !important;
+    grid-template-columns: 24px minmax(0, 1fr);
+    column-gap: 5px;
   }
   #videos > .section-content {
-    margin-left: 0 !important;
+    margin-left: 29px;
   }
 }
 
@@ -967,7 +932,6 @@
   <main id="home" class="wrap">
     <section class="hero" aria-labelledby="page-title">
       <div class="hero-text">
-        <p class="eyebrow">Language · Learning · Creativity</p>
         <h1 id="page-title">A life among words</h1>
         <p class="hero-tagline">Words, Worlds &amp; Other Complications</p>
         <p class="hero-copy">
