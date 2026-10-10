@@ -895,23 +895,60 @@
 }
 
 
-
-/* Videos: keep the section number close to the title and align content beneath it. */
+/* Videos heading: keep the section number and title on one line,
+   with a deliberate gap between them. */
 #videos > .section-heading {
-  grid-template-columns: 24px minmax(0, 1fr);
-  column-gap: 5px;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 24px;
+  align-items: baseline;
+  margin-bottom: 30px;
+}
+#videos > .section-heading > .section-number {
+  position: static;
+  display: block;
+  width: max-content;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+#videos > .section-heading > h2 {
+  margin: 0;
+  padding: 0;
 }
 #videos > .section-content {
-  margin-left: 29px;
+  margin-left: 66px;
+  padding-left: 0;
 }
-@media (max-width: 480px) {
+#videos .video-intro {
+  margin-left: 0;
+  max-width: 980px;
+}
+
+@media (max-width: 700px) {
   #videos > .section-heading {
-    grid-template-columns: 24px minmax(0, 1fr);
-    column-gap: 5px;
+    column-gap: 18px;
+    margin-bottom: 24px;
   }
   #videos > .section-content {
-    margin-left: 29px;
+    margin-left: 0;
   }
+}
+
+
+/* Final override: keep the Videos number and title separated cleanly. */
+#videos > .section-heading {
+  display: flex !important;
+  align-items: baseline;
+  gap: 24px !important;
+}
+#videos > .section-heading > .section-number {
+  flex: 0 0 auto;
+  white-space: nowrap !important;
+  width: auto !important;
+}
+#videos > .section-heading > h2 {
+  margin: 0 !important;
 }
 
 </style>
@@ -932,6 +969,7 @@
   <main id="home" class="wrap">
     <section class="hero" aria-labelledby="page-title">
       <div class="hero-text">
+        <p class="eyebrow">Language · Learning · Creativity</p>
         <h1 id="page-title">A life among words</h1>
         <p class="hero-tagline">Words, Worlds &amp; Other Complications</p>
         <p class="hero-copy">
