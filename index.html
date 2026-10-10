@@ -670,6 +670,110 @@
       }
     }
 
+  
+    /* Prevent the full-width research workshop card from overlapping the adjacent column. */
+    .workshop-cards > .workshop-card:nth-child(3) {
+      clear: both;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    .workshop-cards > .workshop-card:nth-child(3) .workshop-toggle,
+    .workshop-cards > .workshop-card:nth-child(3) details,
+    .workshop-cards > .workshop-card:nth-child(3) summary {
+      min-width: 0;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .workshop-cards > .workshop-card:nth-child(3) .workshop-toggle[open] {
+      overflow: visible;
+    }
+    .workshop-cards > .workshop-card:nth-child(3) .workshop-toggle summary {
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+    .workshop-cards > .workshop-card:nth-child(3) .workshop-list {
+      min-width: 0;
+      max-width: 100%;
+    }
+    @media (min-width: 700px) {
+      .workshop-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: auto;
+      }
+      .workshop-cards > .workshop-card:nth-child(3) {
+        grid-column: 1 / -1;
+        margin-top: 20px;
+      }
+    }
+
+  
+    /* Definitive workshop overlap fix: cards must grow when their details open. */
+    @media (min-width: 700px) {
+      .cards.workshop-cards {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        grid-auto-rows: auto !important;
+        align-items: start !important;
+        column-gap: 38px;
+        row-gap: 24px !important;
+      }
+      .cards.workshop-cards > article.workshop-card {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        overflow: visible !important;
+        align-self: stretch;
+        box-sizing: border-box;
+      }
+      .cards.workshop-cards > article.workshop-card:nth-child(3) {
+        grid-column: 1 / -1 !important;
+        margin-top: 0 !important;
+      }
+      .cards.workshop-cards details[open] {
+        height: auto !important;
+        overflow: visible !important;
+      }
+      .cards.workshop-cards .workshop-list {
+        position: static !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
+    }
+
+  
+    /* Override earlier fixed-height workshop rules at their exact specificity. */
+    @media (min-width: 700px) {
+      .cards.workshop-cards {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        grid-template-rows: auto auto !important;
+        grid-auto-rows: auto !important;
+        align-items: start !important;
+        row-gap: 26px !important;
+      }
+      .cards.workshop-cards > .workshop-card:nth-child(1),
+      .cards.workshop-cards > .workshop-card:nth-child(2),
+      .cards.workshop-cards > .workshop-card:nth-child(3) {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        overflow: visible !important;
+        align-self: start !important;
+      }
+      .cards.workshop-cards > .workshop-card:nth-child(3) {
+        grid-column: 1 / -1 !important;
+        margin-top: 0 !important;
+      }
+      .cards.workshop-cards > .workshop-card details,
+      .cards.workshop-cards > .workshop-card details[open],
+      .cards.workshop-cards > .workshop-card .workshop-list {
+        position: static !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -841,9 +945,7 @@
               </ul>
             </details>
           </article>
-        </div>
-        <p class="section-intro">More work will be added here over time, with publication details and links to read each piece.</p>
-      </div>
+        
     </section>
 <section id="workshops" class="section">
       <div class="section-heading">
