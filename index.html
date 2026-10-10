@@ -151,6 +151,65 @@
 
     .text-link:hover { border-color: var(--red); }
 
+    .press-list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .work-toggle {
+      margin-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .work-toggle summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 0 4px;
+      color: var(--red);
+      cursor: pointer;
+      font-size: .83rem;
+      font-weight: 600;
+      list-style: none;
+    }
+
+    .work-toggle summary::-webkit-details-marker { display: none; }
+
+    .work-toggle summary::after {
+      content: "+";
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .work-toggle[open] summary::after { content: "−"; }
+    .work-toggle summary:focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
+
+    .press-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      line-height: 1.45;
+    }
+
+    .press-list a {
+      color: var(--ink);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1rem;
+    }
+
+    .press-list a:hover { color: var(--red); }
+
+    .press-list span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-family: "DM Sans", sans-serif;
+      font-size: .76rem;
+    }
+
     .collage {
       width: 100%;
       max-width: 470px;
@@ -529,20 +588,60 @@
         <p class="section-intro">I write in different forms and for different audiences: to explore ideas, tell stories, ask questions and share what I learn. Here, creative work, public writing and scholarship belong to one ongoing conversation.</p>
 
         <div class="cards">
-          <article class="card">
+          <article class="card creative-card">
             <p class="card-label">Stories &amp; essays</p>
             <h3>Creative Writing</h3>
             <p>Fiction, personal essays and literary experiments shaped by language, memory, place and inheritance.</p>
+            <details class="work-toggle">
+              <summary>Read selected story</summary>
+              <ul class="press-list">
+                <li>
+                  <a href="https://azimpremjiuniversity.edu.in/people/sharoon-sunny" target="_blank" rel="noopener noreferrer">Promise Tailors</a>
+                  <span><em>Indian Literature</em> · Sahitya Akademi · Vol. 70, No. 2 · 2026</span>
+                </li>
+              </ul>
+            </details>
           </article>
-          <article class="card">
+          <article class="card press-card">
             <p class="card-label">Public writing</p>
             <h3>In the Press</h3>
-            <p>Newspaper columns, essays and commentary written for readers beyond academic spaces. Links lead to the original publications.</p>
+            <p>Selected newspaper essays and commentary, with links to the original articles.</p>
+            <details class="work-toggle">
+              <summary>Browse newspaper articles (8)</summary>
+              <ul class="press-list">
+                <li><a href="https://www.thehindu.com/education/the-literacy-crisis-hiding-behind-the-ai-boom/article71275377.ece" target="_blank" rel="noopener noreferrer">The literacy crisis hiding behind the AI boom</a><span>The Hindu · 31 July 2026</span></li>
+                <li><a href="https://www.deccanherald.com/opinion/when-the-vatican-voices-anxieties-of-the-ai-age-4017396" target="_blank" rel="noopener noreferrer">When the Vatican voices anxieties of the AI age</a><span>Deccan Herald · 26 May 2026</span></li>
+                <li><a href="https://www.deccanherald.com/opinion/kannada-medium-schools-at-the-margins-3891457" target="_blank" rel="noopener noreferrer">Kannada-medium schools at the margins</a><span>Deccan Herald · 9 February 2026</span></li>
+                <li><a href="https://www.deccanherald.com/preview/story/gJUz-n9WBaT8bdUgGaDGqvmXM7Hrtz_osbSm8dpAVtN-UoNUGWegiAOzon8t0VyF" target="_blank" rel="noopener noreferrer">Language, literature and the long divide</a><span>Deccan Herald · 24 December 2025</span></li>
+                <li><a href="https://www.deccanherald.com/opinion/a-city-s-memory-in-motion-3830963" target="_blank" rel="noopener noreferrer">A city's memory in motion</a><span>Deccan Herald · 14 December 2025</span></li>
+                <li><a href="https://www.deccanherald.com/opinion/building-reading-cultures-beyond-technology-3812597" target="_blank" rel="noopener noreferrer">Building reading cultures beyond technology</a><span>Deccan Herald · 28 November 2025</span></li>
+                <li><a href="https://www.deccanherald.com/opinion/bengaluru-as-it-stands-still-3243584" target="_blank" rel="noopener noreferrer">Bengaluru as it stands still</a><span>Deccan Herald · December 2024</span></li>
+                <li><a href="https://azimpremjiuniversity.edu.in/news/2023/life-lessons-on-a-lambretta" target="_blank" rel="noopener noreferrer">Life lessons on a Lambretta</a><span>Deccan Herald · April 2023</span></li>
+              </ul>
+              <a class="text-link" href="https://www.deccanherald.com/author/sharoon-sunny" target="_blank" rel="noopener noreferrer">View all articles on Deccan Herald <span aria-hidden="true">↗</span></a>
+            </details>
           </article>
-          <article class="card">
+          <article class="card research-card">
             <p class="card-label">Scholarship</p>
             <h3>Research &amp; Ideas</h3>
-            <p>Research articles and book chapters on applied linguistics, writing, language education, teacher learning and AI.</p>
+            <p>Research and reflective writing on language education, literacy, classroom practice and the social implications of AI.</p>
+            <details class="work-toggle">
+              <summary>Browse selected research (3)</summary>
+              <ul class="press-list research-list">
+                <li>
+                  <a href="https://link.springer.com/search?query=Follow+the+Yellow+Brick+Road+Uneven+Pathways+to+AI+Integration+in+Indian+Schools" target="_blank" rel="noopener noreferrer">Follow the Yellow Brick Road: Uneven Pathways to AI Integration in Indian Schools</a>
+                  <span>AI &amp; Society · 2026</span>
+                </li>
+                <li>
+                  <a href="https://www.fortell.org/issue-no-49-7-july-2024/" target="_blank" rel="noopener noreferrer">Kappe (Frog) is Missing: Lessons for the Classroom Using Oral Narrative Telling</a>
+                  <span>Fortell · Issue 49 · 2024</span>
+                </li>
+                <li>
+                  <a href="https://llt.org.in/wp-content/uploads/2021/07/LLT-Final-PDF-24.07.2021.pdf" target="_blank" rel="noopener noreferrer">Songs and All That Jazz</a>
+                  <span>Language and Language Teaching · 10(20) · 2021</span>
+                </li>
+              </ul>
+            </details>
           </article>
           <article class="card books-card">
             <p class="card-label">Book-length work</p>
