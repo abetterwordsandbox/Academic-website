@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sharoon Sunny | A life among words</title>
-  <meta name="description" content="The writing, teaching and learning work of Sharoon Sunny.">
+  <meta name="description" content="Writing, workshops and ideas from Sharoon Sunny.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
       --line: #d9d2c7;
       --red: #a83229;
       --white: #fffdf8;
-      --content: 1080px;
+      --content: 1240px;
     }
 
     * { box-sizing: border-box; }
@@ -249,7 +249,7 @@
 
     .section-content {
       margin-left: 66px;
-      max-width: 850px;
+      max-width: 1040px;
     }
 
     .about-story { max-width: 760px; }
@@ -273,7 +273,7 @@
     .about-story .credentials { margin-bottom: 0; }
 
     .section-intro {
-      max-width: 740px;
+      max-width: 900px;
       margin-bottom: 28px;
       color: var(--muted);
       line-height: 1.85;
@@ -310,6 +310,16 @@
     }
 
     .card .text-link { margin-top: 2px; }
+
+    .workshop-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 38px; }
+    .workshop-card:last-child { grid-column: 1 / -1; max-width: 100%; }
+    .workshop-list { margin-top: 15px; }
+    .workshop-list li { padding: 11px 0; }
+    .workshop-list .work-title { display: block; color: var(--ink); font-family: "Playfair Display", Georgia, serif; font-size: 1rem; }
+    .workshop-list li > span:not(.work-title) { display: block; margin-top: 3px; color: var(--muted); font-family: "DM Sans", sans-serif; font-size: .76rem; }
+    .workshop-card .work-toggle { margin-top: 16px; }
+    .workshop-toggle > summary { padding-bottom: 10px; }
+    .workshop-toggle .press-list { margin-top: 4px; }
 
     .book-feature {
       display: grid;
@@ -361,7 +371,7 @@
     }
 
     .publication {
-      max-width: 820px;
+      max-width: 100%;
       padding: 26px 0;
       border-top: 1px solid var(--line);
     }
@@ -462,7 +472,8 @@
         margin-bottom: 23px;
       }
       .section-content { margin-left: 50px; }
-      .cards { grid-template-columns: 1fr; }
+      .cards, .workshop-cards { grid-template-columns: 1fr; }
+      .workshop-card:last-child { grid-column: auto; }
     }
 
     @media (max-width: 480px) {
@@ -486,7 +497,7 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#writing">Writing</a>
-        <a href="#teaching-learning">Teaching &amp; Learning</a>
+        <a href="#workshops">Workshops</a>
       </div>
     </nav>
   </header>
@@ -677,33 +688,66 @@
       </div>
     </section>
 
-    <section id="teaching-learning" class="section">
+    <section id="workshops" class="section">
       <div class="section-heading">
         <span class="section-number">03 /</span>
-        <h2>Teaching &amp; Learning</h2>
+        <h2>Workshops</h2>
       </div>
       <div class="section-content">
-        <p class="section-intro">My work in education connects research with classroom practice, from teacher development and curriculum design to language, literacy, assessment and the changing possibilities of technology.</p>
-        <div class="cards">
-          <article class="card">
-            <p class="card-label">Research &amp; practice</p>
-            <h3>Language and Learning</h3>
-            <p>Applied linguistics, English language education, writing development and questions about how people learn.</p>
+        <p class="section-intro">Workshops are spaces for trying things out together: writing, reading, asking questions and exploring what language can make possible. These are selected workshops with teachers, students, writers and university faculty in India and internationally.</p>
+
+        <div class="cards workshop-cards">
+          <article class="card workshop-card">
+            <p class="card-label">01 · Writing &amp; creativity</p>
+            <h3>Writing, Imagination &amp; Play</h3>
+            <p>Creative writing, poetry, memoir and playful ways into language.</p>
+            <details class="work-toggle workshop-toggle">
+              <summary>View writing workshops</summary>
+              <ul class="press-list workshop-list">
+                <li><span class="work-title">Moss Garden: Creative, Climate-friendly Writing for Teachers</span><span>Green Action ELT, UK · online · 2023</span></li>
+                <li><span class="work-title">Writing Lives: Memoir Writing Workshop</span><span>Christ University, Bengaluru · 2023</span></li>
+                <li><span class="work-title">Gut Feeling: Science Writing Workshop</span><span>2023</span></li>
+                <li><span class="work-title">Katha Regional Writers Workshop</span><span>South India · 2019, 2017</span></li>
+                <li><span class="work-title">Poetry Writing Workshop</span><span>Christ University, Bengaluru · 2014</span></li>
+                <li><span class="work-title">Teaching for Creativity</span><span>Chrysalis High, Bengaluru · 2013</span></li>
+                <li><span class="work-title">Sports Writing for Undergraduate Students</span><span>With Girishar S. · 2023</span></li>
+                <li><span class="work-title">Teachers as Writers: Breaking Creative Writing Myths</span><span>Sabah, Malaysia · 2023</span></li>
+                <li><span class="work-title">Working Our Way Through Words</span><span>International English Language Teachers Association, Mauritius · online · 2023</span></li>
+                <li><span class="work-title">Workshop with Alan Maley</span><span>English and Foreign Languages University (EFLU), Hyderabad</span></li>
+                <li><span class="work-title">Genwise workshops</span></li>
+              </ul>
+            </details>
           </article>
-          <article class="card">
-            <p class="card-label">Teacher development</p>
-            <h3>Workshops</h3>
-            <p>Professional learning and practical explorations of phonetics, pronunciation, reading, writing and classroom practice.</p>
+
+          <article class="card workshop-card">
+            <p class="card-label">02 · Teachers &amp; language</p>
+            <h3>Teachers, Language &amp; Learning</h3>
+            <p>Practical work with teachers on reading, grammar, language awareness and classroom practice.</p>
+            <details class="work-toggle workshop-toggle">
+              <summary>View teacher workshops</summary>
+              <ul class="press-list workshop-list">
+                <li><span class="work-title">English Language Teacher Training</span><span>Government high school teachers · 2022, 2024</span></li>
+                <li><span class="work-title">The Power of Reading</span><span>Directorate of Minorities Dr APJ Kalam Schools, Shikshalokam · 2023</span></li>
+                <li><span class="work-title">Training Teachers to Teach Grammar to Second Language Learners</span><span>ACTS Academy Teachers, Bengaluru · 2023</span></li>
+                <li><span class="work-title">Teaching for Creativity</span><span>Bethany High School, Bengaluru · 2018</span></li>
+              </ul>
+            </details>
           </article>
-          <article class="card">
-            <p class="card-label">Curriculum &amp; assessment</p>
-            <h3>Designing Learning</h3>
-            <p>Curriculum development, learning materials and assessment approaches that connect educational ideas with learners’ experiences.</p>
-          </article>
-          <article class="card">
-            <p class="card-label">Emerging questions</p>
-            <h3>Language, Writing &amp; AI</h3>
-            <p>Exploring the implications of artificial intelligence for language, literacy, writing and education.</p>
+
+          <article class="card workshop-card">
+            <p class="card-label">03 · Research &amp; exchange</p>
+            <h3>Research, Reflection &amp; Exchange</h3>
+            <p>Workshops for university faculty and teacher educators, bringing research into conversation with practice.</p>
+            <details class="work-toggle workshop-toggle">
+              <summary>View research workshops</summary>
+              <ul class="press-list workshop-list">
+                <li><span class="work-title">Faculty Development Programme</span><span>30 government degree college faculty · 2026</span></li>
+                <li><span class="work-title">Quality Assessment</span><span>Department of Literature and Cultural Studies, Christ University · 2026</span></li>
+                <li><span class="work-title">Critical Reading and Writing</span><span>Faculty from government degree colleges · 2025</span></li>
+                <li><span class="work-title">Research Writing Workshop</span><span>DAKSH Foundation, Bengaluru · 2025</span></li>
+                <li><span class="work-title">Research Methodology Workshop for Teacher Educators</span><span>Azim Premji University · co-facilitated · 2023</span></li>
+              </ul>
+            </details>
           </article>
         </div>
       </div>
